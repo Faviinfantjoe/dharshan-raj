@@ -1,0 +1,146 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: rgb(245, 245, 245);
+  color: #333;
+}
+
+/* Header Styles */
+header {
+  background: rgb(40, 40, 70);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5em;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: rgb(255, 200, 100);
+}
+
+/* Home Section */
+.home-section {
+  background: linear-gradient(120deg, rgb(70, 160, 255), rgb(120, 220, 240));
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.home-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+/* Section Styles */
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: rgb(40, 40, 70);
+}
+
+.project {
+  margin-bottom: 30px;
+  background: rgb(255, 255, 255);
+  padding: 20px;
+  border-left: 5px solid rgb(40, 40, 70);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Skills List */
+#skills ul {
+  list-style: circle;
+  padding-left: 20px;
+}
+
+#skills li {
+  margin-bottom: 10px;
+}
+
+/* Contact */
+#contact p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+/* Typing animation */
+.cursor {
+  display: inline-block;
+  width: 2px;
+  background: white;
+  animation: blink 0.7s steps(1) infinite;
+  margin-left: 2px;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Scroll Fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .home-section h2 {
+    font-size: 2em;
+  }
+
+  section {
+    padding: 40px 15px;
+  }
+
+  .project {
+    padding: 15px;
+  }
+}

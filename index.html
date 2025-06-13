@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dharshan Raj Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header id="home">
+    <h1>Dharshan Raj</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section class="home-section">
+    <h2><span class="typed-text"></span><span class="cursor">|</span></h2>
+    <p>A passionate Frontend Developer</p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>
+      I'm Dharshan Raj, a BCA student at Don Bosco College, Dharmapuri. I have strong knowledge of HTML, CSS, and JavaScript.
+      I am passionate about creating visually appealing and responsive websites. I specialize in frontend development and am 
+      currently learning backend technologies to become a full-stack developer. I enjoy solving UI problems and building 
+      unique web experiences that are functional and engaging. I love learning new web technologies and applying them 
+      creatively.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="fade-in">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>College Project: To-Do App</h3>
+      <p>This is a task manager that allows users to add, delete, and manage daily tasks. It was developed using HTML, CSS, and JavaScript with responsive design. It's simple but effective for daily task tracking.</p>
+    </div>
+
+    <div class="project">
+      <h3>Personal Portfolio</h3>
+      <p>This current portfolio site is one of my key projects. It is designed using pure HTML and CSS with custom RGB colors and a unique layout. It reflects my skills in frontend development and design thinking.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="fade-in">
+    <h2>Skills</h2>
+    <p>
+      I specialize in web development, especially frontend technologies:
+    </p>
+    <ul>
+      <li>HTML5 - Clean, semantic, SEO-friendly structure</li>
+      <li>CSS3 - Responsive layouts, animations, and custom styling</li>
+      <li>JavaScript - DOM manipulation and interactivity</li>
+      <li>Basic Backend - Currently learning Node.js and databases</li>
+      <li>Version Control - Git and GitHub</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="fade-in">
+    <h2>Contact</h2>
+    <p>Email: dharshanraj.dev@gmail.com</p>
+    <p>Phone: +91 98765 43210</p>
+  </section>
+
+  <!-- JS for animation -->
+  <script>
+    // Typing animation
+    const text = "Welcome to Dharshan Raj's Portfolio";
+    let i = 0;
+    const speed = 80;
+    function typeWriter() {
+      if (i < text.length) {
+        document.querySelector(".typed-text").textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    typeWriter();
+
+    // Scroll fade-in
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+
+</body>
+</html>
